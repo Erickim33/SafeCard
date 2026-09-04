@@ -10,3 +10,5 @@ ios/App/Pods/
 *.keystore
 *.jks
 android/.idea/
+
+android/keystore.properties
