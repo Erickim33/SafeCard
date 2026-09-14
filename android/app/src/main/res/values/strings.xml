@@ -1,7 +1,7 @@
-<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">safecard</string>
     <string name="title_activity_main">safecard</string>
     <string name="package_name">com.safecard.game</string>
     <string name="custom_url_scheme">com.safecard.game</string>
+    <string name="admob_app_id">ca-app-pub-2333791456693293~3706577145</string>
 </resources>

@@ -1,4 +1,3 @@
-﻿<!-- Copyright © 2026 Eric Mwangi Kimani. All rights reserved. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -272,9 +271,6 @@ button:active{transform:scale(.96);}
   margin-left:-16px; position:relative;
   box-shadow:0 1px 0 rgba(255,255,255,.5) inset, 0 8px 20px -8px rgba(0,0,0,.55), 0 2px 4px rgba(0,0,0,.25);
   transition:transform .12s, box-shadow .12s; user-select:none;
-  
-}
-to{transform:perspective(500px) rotateY(0deg) scale(1); opacity:1;}
 }
 .card:first-child{margin-left:0;}
 .card.red{color:#c0272d;}
@@ -353,11 +349,11 @@ to{transform:perspective(500px) rotateY(0deg) scale(1); opacity:1;}
   <!-- ================= LOADING SCREEN ================= -->
   <div id="loadingScreen" class="screen active">
     <div class="load-suits">
-      <div class="load-suit">â™ </div><div class="load-suit">â™¥</div><div class="load-suit">â™¦</div><div class="load-suit">â™£</div>
+      <div class="load-suit">♠</div><div class="load-suit">♥</div><div class="load-suit">♦</div><div class="load-suit">♣</div>
     </div>
     <h1 class="load-title disp">SAFE CARD</h1>
     <div class="load-cards" id="loadCards"></div>
-    <div class="load-pct disp" id="loadPct">LOADINGâ€¦ 0%</div>
+    <div class="load-pct disp" id="loadPct">LOADING… 0%</div>
   </div>
 
   <!-- ================= MENU SCREEN ================= -->
@@ -366,37 +362,37 @@ to{transform:perspective(500px) rotateY(0deg) scale(1); opacity:1;}
       <div></div>
       <div class="menu-icons">
         <button class="menu-help" onclick="openHowToPlay()">?</button>
-        <span class="menu-suit-ico">â™£</span>
+        <span class="menu-suit-ico">♣</span>
       </div>
     </div>
 
     <div class="logo-orbit-wrap">
-      <span class="orbit-suit">â™ </span>
-      <span class="orbit-suit red">â™¥</span>
-      <span class="orbit-suit red">â™¦</span>
-      <span class="orbit-suit">â™£</span>
+      <span class="orbit-suit">♠</span>
+      <span class="orbit-suit red">♥</span>
+      <span class="orbit-suit red">♦</span>
+      <span class="orbit-suit">♣</span>
       <div class="menu-title-center disp"><span class="black">SAFE</span> <span class="blue">CARD</span></div>
       <div class="menu-subtitle-center">Kenyan Poker. Reimagined</div>
     </div>
 
     <div class="play-wrap">
-      <button class="play-btn disp" onclick="onPlayTapped()">â–¶ PLAY</button>
-      <div class="play-sub">AI difficulty: <b id="playSubDiff">Hard</b> Â· tap Settings to change</div>
+      <button class="play-btn disp" onclick="onPlayTapped()">▶ PLAY</button>
+      <div class="play-sub">AI difficulty: <b id="playSubDiff">Hard</b> · tap Settings to change</div>
     </div>
 
     <div class="variation-scroll" id="variationScroll"></div>
 
     <div class="menu-bottom-row">
-      <button class="menu-pill" onclick="openSettingsModal()"><span class="ico">âš™</span>Settings</button>
-      <button class="menu-pill" onclick="openPlaceholder('Profile')"><span class="ico">ðŸ‘¤</span>Profile</button>
-      <button class="menu-pill" onclick="openLeaderboard()"><span class="ico">ðŸ†</span>Leaderboard</button>
+      <button class="menu-pill" onclick="openSettingsModal()"><span class="ico">⚙</span>Settings</button>
+      <button class="menu-pill" onclick="openProfile()">👤 Profile</button>
+      <button class="menu-pill" onclick="openLeaderboard()"><span class="ico">🏆</span>Leaderboard</button>
     </div>
   </div>
 
   <!-- ================= PLAY WITH FRIENDS SCREEN ================= -->
   <div id="friendsScreen" class="screen light-screen">
     <div class="ls-topbar">
-      <button class="ls-back" onclick="closeOverlay(); showScreen('menu'); renderMenu();">â†</button>
+      <button class="ls-back" onclick="closeOverlay(); showScreen('menu'); renderMenu();">←</button>
       <div class="ls-heading">
         <div class="eyebrow" id="friendsEyebrow">CLASSIC</div>
         <div class="title">Play with Friends</div>
@@ -410,13 +406,13 @@ to{transform:perspective(500px) rotateY(0deg) scale(1); opacity:1;}
 
     <div id="friendsTabBody"></div>
 
-    <button class="light-btn-secondary disp" onclick="goToOpponentsScreen()">ðŸ¤– &nbsp; Offline vs AI</button>
+    <button class="light-btn-secondary disp" onclick="goToOpponentsScreen()">🤖 &nbsp; Offline vs AI</button>
   </div>
 
   <!-- ================= CHOOSE OPPONENTS SCREEN ================= -->
   <div id="opponentsScreen" class="screen light-screen">
     <div class="ls-topbar">
-      <button class="ls-back" onclick="closeOverlay(); showScreen('friends'); renderFriendsScreen();">â†</button>
+      <button class="ls-back" onclick="closeOverlay(); showScreen('friends'); renderFriendsScreen();">←</button>
       <div class="ls-heading">
         <div class="title">Choose Opponents</div>
       </div>
@@ -424,7 +420,7 @@ to{transform:perspective(500px) rotateY(0deg) scale(1); opacity:1;}
 
     <div class="ls-panel">
       <div class="panel-icon-row">
-        <div class="panel-icon">ðŸ¤–</div>
+        <div class="panel-icon">🤖</div>
         <div>
           <div class="ptitle">Offline</div>
           <div class="psub">VS AI</div>
@@ -441,10 +437,10 @@ to{transform:perspective(500px) rotateY(0deg) scale(1); opacity:1;}
     </div>
 
     <div class="online-teaser">
-      <div class="panel-icon" style="background:rgba(59,130,246,.12);">ðŸ“¶</div>
+      <div class="panel-icon" style="background:rgba(59,130,246,.12);">📶</div>
       <div>
         <div class="ptitle" style="font-size:14px;">Online</div>
-        <div class="psub">2-player rooms Â· see Play with Friends</div>
+        <div class="psub">2-player rooms · see Play with Friends</div>
       </div>
     </div>
   </div>
@@ -452,7 +448,7 @@ to{transform:perspective(500px) rotateY(0deg) scale(1); opacity:1;}
   <!-- ================= CUSTOM RULES BUILDER SCREEN ================= -->
   <div id="customRulesScreen" class="screen light-screen">
     <div class="ls-topbar">
-      <button class="ls-back" onclick="closeOverlay(); showScreen('menu'); renderMenu();">â†</button>
+      <button class="ls-back" onclick="closeOverlay(); showScreen('menu'); renderMenu();">←</button>
       <div class="ls-heading">
         <div class="title">Custom Rules</div>
       </div>
@@ -473,7 +469,7 @@ to{transform:perspective(500px) rotateY(0deg) scale(1); opacity:1;}
 
       <div class="section-eyebrow">Attack values</div>
       <div id="customAttackValues" style="display:flex;flex-direction:column;gap:12px;margin-bottom:8px;"></div>
-      <div class="settings-note" style="color:#8a93a6;margin-bottom:16px;">These are house rules â€” everyone in the match plays by whatever you set here, whether offline vs AI or online with friends.</div>
+      <div class="settings-note" style="color:#8a93a6;margin-bottom:16px;">These are house rules — everyone in the match plays by whatever you set here, whether offline vs AI or online with friends.</div>
 
       <button class="light-btn-primary disp" onclick="saveCustomRules()">Save &amp; Use These Rules</button>
     </div>
@@ -488,7 +484,7 @@ to{transform:perspective(500px) rotateY(0deg) scale(1); opacity:1;}
     </div>
     <div style="text-align:center;margin:30px 0 10px;">
       <div style="font-size:44px;font-weight:800;letter-spacing:10px;color:var(--gold-soft);font-family:'Bricolage Grotesque',sans-serif;" id="lobbyCode">------</div>
-      <div style="font-size:12px;opacity:.6;margin-top:6px;">Share this code â€” your friend enters it under "Join with a Code"</div>
+      <div style="font-size:12px;opacity:.6;margin-top:6px;">Share this code — your friend enters it under "Join with a Code"</div>
     </div>
     <div class="modal-sub" style="text-align:center;">Variation: <b id="lobbyModeName" style="color:var(--gold-soft);"></b></div>
     <div id="lobbySeats" style="margin:20px 0;display:flex;flex-direction:column;gap:10px;"></div>
@@ -499,7 +495,7 @@ to{transform:perspective(500px) rotateY(0deg) scale(1); opacity:1;}
   <div id="gameScreen" class="screen">
     <div class="topbar">
       <div class="stat-pill disp" id="playersPill">Players: 2</div>
-      <div class="stat-pill disp center-pill" id="suitPill">Suit â™  &nbsp; âš¡0 &nbsp; â†’</div>
+      <div class="stat-pill disp center-pill" id="suitPill">Suit ♠ &nbsp; ⚡0 &nbsp; →</div>
       <div style="display:flex;gap:6px;">
         <button class="icon-btn" onclick="openRulesModal(G.mode)">?</button>
         <button class="stat-pill disp quit-pill" onclick="confirmQuit()">Quit</button>
@@ -532,12 +528,12 @@ to{transform:perspective(500px) rotateY(0deg) scale(1); opacity:1;}
     </div>
 
     <div class="action-bar">
-      <button class="btn btn-secondary disp" id="secondaryBtn" onclick="handleSecondary()">â†º Draw</button>
+      <button class="btn btn-secondary disp" id="secondaryBtn" onclick="handleSecondary()">↺ Draw</button>
       <button class="btn btn-primary disp" id="playBtn" onclick="handlePlay()" disabled>PLAY</button>
-      <button class="btn btn-card disp hidden" id="cardBtn" onclick="pressCardButton()">âœ¨ CARD</button>
+      <button class="btn btn-card disp hidden" id="cardBtn" onclick="pressCardButton()">✨ CARD</button>
     </div>
 
-    <div class="log-toggle" onclick="toggleLog()" id="logToggle">â–¾ show game log</div>
+    <div class="log-toggle" onclick="toggleLog()" id="logToggle">▾ show game log</div>
     <div class="log-panel" id="logPanel"></div>
   </div>
 
@@ -546,15 +542,19 @@ to{transform:perspective(500px) rotateY(0deg) scale(1); opacity:1;}
 <div id="overlayRoot"></div>
 
 <!-- Firebase now loads dynamically via JS below, with an automatic fallback CDN,
-     instead of static tags â€” see loadFirebaseSdk(). Harmless if it never loads
+     instead of static tags — see loadFirebaseSdk(). Harmless if it never loads
      (e.g. inside a Claude.ai artifact, which uses its own storage instead). -->
+
+
+<script src="capacitor.js"></script>
+<script src="admob.js"></script>
 
 <script>
 // =====================================================================
 // ENGINE  (validated headlessly before wiring into this UI)
 // =====================================================================
 const SUITS = ['S','H','D','C'];
-const SUIT_SYMBOL = {S:'â™ ', H:'â™¥', D:'â™¦', C:'â™£'};
+const SUIT_SYMBOL = {S:'♠', H:'♥', D:'♦', C:'♣'};
 const RANKS = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
 const FINISH_RANKS = ['4','5','6','7','9','10'];
 const ATTACK_VALUES = {'2':2,'3':3,'JOKER':5};
@@ -565,8 +565,8 @@ const MODES = {
     desc:'The original rules. Match suit or rank, stack attacks of the same suit, and press CARD before your winning play.'},
   bomb:      {name:'Bomb ni Bomb',        short:'Bomb ni Bomb', tag:'First to finish wins', suitLockedStacking:false, deflectionEnabled:true,  targetedAttacks:false, cardButtonRequired:true,  elimination:false,
     desc:'Attack cards stack freely regardless of suit. Kings and Jacks can now defend against attacks too.'},
-  bubu:      {name:'Game ni Bubu',        short:'Game ni Bubu', tag:'Instant finish Â· no CARD', suitLockedStacking:false, deflectionEnabled:true,  targetedAttacks:true,  cardButtonRequired:false, elimination:false,
-    desc:'No CARD button â€” win the moment your hand is empty. Attacks can be aimed at any player.'},
+  bubu:      {name:'Game ni Bubu',        short:'Game ni Bubu', tag:'Instant finish · no CARD', suitLockedStacking:false, deflectionEnabled:true,  targetedAttacks:true,  cardButtonRequired:false, elimination:false,
+    desc:'No CARD button — win the moment your hand is empty. Attacks can be aimed at any player.'},
   deathmatch:{name:'Deathmatch',          short:'Deathmatch', tag:'Elimination rounds', suitLockedStacking:false, deflectionEnabled:true,  targetedAttacks:true,  cardButtonRequired:false, elimination:true,
     desc:'Played in rounds. After each round, whoever holds the most cards is eliminated. Last one standing wins.'},
 };
@@ -616,7 +616,7 @@ class Game{
   logMsg(s){ this.log.push(s); if(this.log.length>200) this.log.shift(); }
   activePlayers(){ return this.players.filter(p=>!p.eliminated); }
 
-  // Insert a brand-new player mid-game. Safe to call any time â€” appending at the
+  // Insert a brand-new player mid-game. Safe to call any time — appending at the
   // end of the array never disturbs existing indices (currentIdx, pendingAttack, etc.)
   addPlayer(name, isAI){
     if(this.players.length>=8) return null;
@@ -732,7 +732,7 @@ class Game{
       } else {
         this.drawCards(1, playerIdx);
         const reason = !validShape ? "with an illegal card" : "without CARD";
-        this.logMsg(`${p.name} finished ${reason} â€” penalty draw.`);
+        this.logMsg(`${p.name} finished ${reason} — penalty draw.`);
         return false;
       }
     }
@@ -758,7 +758,7 @@ class Game{
   playJackNormal(playerIdx, cardId){
     const cards = this.removeFromHand(playerIdx, [cardId]);
     this.discardPile.push(cards[0]);
-    this.logMsg(`${this.players[playerIdx].name} plays Jack â€” next player is skipped.`);
+    this.logMsg(`${this.players[playerIdx].name} plays Jack — next player is skipped.`);
     const won = this.afterHandCheck(playerIdx, cards, false);
     if(!won) this.currentIdx = this.nextIdx(playerIdx, 2);
     return won;
@@ -767,7 +767,7 @@ class Game{
     const cards = this.removeFromHand(playerIdx, [cardId]);
     this.discardPile.push(cards[0]);
     this.direction *= -1;
-    this.logMsg(`${this.players[playerIdx].name} plays King â€” direction reverses.`);
+    this.logMsg(`${this.players[playerIdx].name} plays King — direction reverses.`);
     const won = this.afterHandCheck(playerIdx, cards, false);
     if(!won) this.advanceNormal(playerIdx,1);
     return won;
@@ -777,8 +777,8 @@ class Game{
     this.discardPile.push(cards[0]);
     this.pendingDemand = {suit, rank: rank||null};
     this.logMsg(rank
-      ? `${this.players[playerIdx].name} plays a Special Ace â€” demands ${rank}${SUIT_SYMBOL[suit]}.`
-      : `${this.players[playerIdx].name} plays Ace â€” demands ${SUIT_SYMBOL[suit]}.`);
+      ? `${this.players[playerIdx].name} plays a Special Ace — demands ${rank}${SUIT_SYMBOL[suit]}.`
+      : `${this.players[playerIdx].name} plays Ace — demands ${SUIT_SYMBOL[suit]}.`);
     const won = this.afterHandCheck(playerIdx, cards, false);
     if(!won) this.advanceNormal(playerIdx,1);
     return won;
@@ -801,7 +801,7 @@ class Game{
     const targetIdx = this.cfg().targetedAttacks ? chosenTargetIdx : this.nextIdx(playerIdx,1);
     this.pendingAttack.total += added;
     this.pendingAttack.targetIdx = targetIdx; this.pendingAttack.originatorIdx = playerIdx;
-    this.logMsg(`${this.players[playerIdx].name} stacks ${cards.map(fmt).join(' + ')} â€” ${this.players[targetIdx].name} now faces +${this.pendingAttack.total}.`);
+    this.logMsg(`${this.players[playerIdx].name} stacks ${cards.map(fmt).join(' + ')} — ${this.players[targetIdx].name} now faces +${this.pendingAttack.total}.`);
     const won = this.afterHandCheck(playerIdx, cards, false);
     if(!won) this.currentIdx = targetIdx;
     return won;
@@ -821,7 +821,7 @@ class Game{
     this.discardPile.push(card);
     const nt = this.nextIdx(playerIdx,1);
     this.pendingAttack.targetIdx = nt; this.pendingAttack.originatorIdx = playerIdx;
-    this.logMsg(`${this.players[playerIdx].name} deflects with a Jack â€” attack passes to ${this.players[nt].name}.`);
+    this.logMsg(`${this.players[playerIdx].name} deflects with a Jack — attack passes to ${this.players[nt].name}.`);
     const won = this.afterHandCheck(playerIdx, cards, false);
     if(!won) this.currentIdx = nt;
     return won;
@@ -847,7 +847,7 @@ class Game{
     return true;
   }
   // A demand can be satisfied with one card, or a card plus a same-rank chain
-  // (like Question Card follow-ups) â€” at least one card in the group must
+  // (like Question Card follow-ups) — at least one card in the group must
   // itself satisfy the demand (suit, and rank if it's a Special Ace demand).
   matchesDemandGroup(cards){
     if(!this.pendingDemand) return true;
@@ -869,15 +869,15 @@ class Game{
     const cards = this.removeFromHand(playerIdx, [cardId]);
     this.discardPile.push(cards[0]); this.pendingDemand = {suit:newSuit, rank:newRank||null};
     this.logMsg(newRank
-      ? `${this.players[playerIdx].name} overrides with a Special Ace â€” new demand: ${newRank}${SUIT_SYMBOL[newSuit]}.`
-      : `${this.players[playerIdx].name} overrides with an Ace â€” new demand: ${SUIT_SYMBOL[newSuit]}.`);
+      ? `${this.players[playerIdx].name} overrides with a Special Ace — new demand: ${newRank}${SUIT_SYMBOL[newSuit]}.`
+      : `${this.players[playerIdx].name} overrides with an Ace — new demand: ${SUIT_SYMBOL[newSuit]}.`);
     const won = this.afterHandCheck(playerIdx, cards, false);
     if(!won) this.advanceNormal(playerIdx,1);
     return won;
   }
   failDemand(playerIdx){
     this.drawCards(1, playerIdx);
-    this.logMsg(`${this.players[playerIdx].name} can't follow suit â€” draws a penalty card.`);
+    this.logMsg(`${this.players[playerIdx].name} can't follow suit — draws a penalty card.`);
     this.advanceNormal(playerIdx,1);
   }
   playQuestionChain(playerIdx, cardIds, cardWasPressed){ return this.playNormalGroup(playerIdx, cardIds, cardWasPressed); }
@@ -889,7 +889,7 @@ class Game{
     let maxCount = Math.max(...contenders.map(p=>p.hand.length));
     let tied = contenders.filter(p=>p.hand.length===maxCount);
     if(tied.length>1){
-      this.logMsg(`Tie for most cards (${maxCount}) between ${tied.map(p=>p.name).join(', ')} â€” comparing highest card.`);
+      this.logMsg(`Tie for most cards (${maxCount}) between ${tied.map(p=>p.name).join(', ')} — comparing highest card.`);
       tied = breakTieByHighCard(tied);
     }
     const eliminated = tied[0]; eliminated.eliminated = true;
@@ -1076,6 +1076,13 @@ let roomSeq = 0;
 let isHost = true;
 let roomUnsub = null;
 let myName = 'You';
+
+try{
+  const savedName = localStorage.getItem('safecard_player_name');
+  if(savedName && savedName.trim()){
+    myName = savedName.trim().slice(0,16);
+  }
+}catch(e){}
 let selected = new Set();
 let humanCardPressed = false;
 let humanActionsCount = 0;
@@ -1103,27 +1110,27 @@ const I18N = {
     masterVolume:'Sauti Kuu', musicVolume:'Sauti ya Muziki', sfxVolume:'Sauti za Mchezo',
     language:'Lugha', terms:'Masharti na Vigezo', help:'Msaada', createdBy:'Imeundwa na',
     howToPlay:'Jinsi ya Kucheza', variation:'Aina', customGame:'Mchezo Maalum' },
-  fr: { play:'JOUER', draw:'Piocher', card:'CARTE', settings:'RÃ©glages', profile:'Profil', leaderboard:'Classement',
-    yourTurn:'Votre tour', roomCode:'Code de la salle', createRoom:'CrÃ©er une salle', joinCode:'Rejoindre avec un code',
-    startMatch:'DÃ©marrer la partie', offlineVsAi:"Hors ligne contre l'IA", onlineWithFriend:'En ligne avec un ami',
-    quit:'Quitter', leave:'Partir', continueBtn:'Continuer', done:'TerminÃ©',
-    masterVolume:'Volume gÃ©nÃ©ral', musicVolume:'Volume de la musique', sfxVolume:'Volume des effets sonores',
-    language:'Langue', terms:"Conditions d'utilisation", help:'Aide et assistance', createdBy:'CrÃ©Ã© par',
-    howToPlay:'Comment jouer', variation:'Variante', customGame:'Partie personnalisÃ©e' },
+  fr: { play:'JOUER', draw:'Piocher', card:'CARTE', settings:'Réglages', profile:'Profil', leaderboard:'Classement',
+    yourTurn:'Votre tour', roomCode:'Code de la salle', createRoom:'Créer une salle', joinCode:'Rejoindre avec un code',
+    startMatch:'Démarrer la partie', offlineVsAi:"Hors ligne contre l'IA", onlineWithFriend:'En ligne avec un ami',
+    quit:'Quitter', leave:'Partir', continueBtn:'Continuer', done:'Terminé',
+    masterVolume:'Volume général', musicVolume:'Volume de la musique', sfxVolume:'Volume des effets sonores',
+    language:'Langue', terms:"Conditions d'utilisation", help:'Aide et assistance', createdBy:'Créé par',
+    howToPlay:'Comment jouer', variation:'Variante', customGame:'Partie personnalisée' },
   de: { play:'SPIELEN', draw:'Ziehen', card:'KARTE', settings:'Einstellungen', profile:'Profil', leaderboard:'Bestenliste',
     yourTurn:'Du bist dran', roomCode:'Raumcode', createRoom:'Raum erstellen', joinCode:'Mit Code beitreten',
     startMatch:'Spiel starten', offlineVsAi:'Offline gegen KI spielen', onlineWithFriend:'Online mit einem Freund',
     quit:'Verlassen', leave:'Verlassen', continueBtn:'Weiter', done:'Fertig',
-    masterVolume:'GesamtlautstÃ¤rke', musicVolume:'MusiklautstÃ¤rke', sfxVolume:'Soundeffekte',
+    masterVolume:'Gesamtlautstärke', musicVolume:'Musiklautstärke', sfxVolume:'Soundeffekte',
     language:'Sprache', terms:'Nutzungsbedingungen', help:'Hilfe & Support', createdBy:'Erstellt von',
     howToPlay:'Spielanleitung', variation:'Variante', customGame:'Eigenes Spiel' },
-  es: { play:'JUGAR', draw:'Robar', card:'CARTA', settings:'Ajustes', profile:'Perfil', leaderboard:'ClasificaciÃ³n',
-    yourTurn:'Tu turno', roomCode:'CÃ³digo de sala', createRoom:'Crear sala', joinCode:'Unirse con un cÃ³digo',
-    startMatch:'Iniciar partida', offlineVsAi:'Sin conexiÃ³n contra la IA', onlineWithFriend:'En lÃ­nea con un amigo',
+  es: { play:'JUGAR', draw:'Robar', card:'CARTA', settings:'Ajustes', profile:'Perfil', leaderboard:'Clasificación',
+    yourTurn:'Tu turno', roomCode:'Código de sala', createRoom:'Crear sala', joinCode:'Unirse con un código',
+    startMatch:'Iniciar partida', offlineVsAi:'Sin conexión contra la IA', onlineWithFriend:'En línea con un amigo',
     quit:'Salir', leave:'Abandonar', continueBtn:'Continuar', done:'Listo',
-    masterVolume:'Volumen general', musicVolume:'Volumen de mÃºsica', sfxVolume:'Volumen de efectos',
-    language:'Idioma', terms:'TÃ©rminos y condiciones', help:'Ayuda y soporte', createdBy:'Creado por',
-    howToPlay:'CÃ³mo jugar', variation:'Variante', customGame:'Partida personalizada' },
+    masterVolume:'Volumen general', musicVolume:'Volumen de música', sfxVolume:'Volumen de efectos',
+    language:'Idioma', terms:'Términos y condiciones', help:'Ayuda y soporte', createdBy:'Creado por',
+    howToPlay:'Cómo jugar', variation:'Variante', customGame:'Partida personalizada' },
   it: { play:'GIOCA', draw:'Pesca', card:'CARTA', settings:'Impostazioni', profile:'Profilo', leaderboard:'Classifica',
     yourTurn:'Tocca a te', roomCode:'Codice stanza', createRoom:'Crea una stanza', joinCode:'Unisciti con un codice',
     startMatch:'Inizia partita', offlineVsAi:"Offline contro l'IA", onlineWithFriend:'Online con un amico',
@@ -1131,12 +1138,12 @@ const I18N = {
     masterVolume:'Volume generale', musicVolume:'Volume musica', sfxVolume:'Volume effetti',
     language:'Lingua', terms:'Termini e condizioni', help:'Assistenza', createdBy:'Creato da',
     howToPlay:'Come giocare', variation:'Variante', customGame:'Partita personalizzata' },
-  pt: { play:'JOGAR', draw:'Comprar', card:'CARTA', settings:'DefiniÃ§Ãµes', profile:'Perfil', leaderboard:'ClassificaÃ§Ã£o',
-    yourTurn:'A sua vez', roomCode:'CÃ³digo da sala', createRoom:'Criar sala', joinCode:'Entrar com um cÃ³digo',
+  pt: { play:'JOGAR', draw:'Comprar', card:'CARTA', settings:'Definições', profile:'Perfil', leaderboard:'Classificação',
+    yourTurn:'A sua vez', roomCode:'Código da sala', createRoom:'Criar sala', joinCode:'Entrar com um código',
     startMatch:'Iniciar jogo', offlineVsAi:'Offline contra a IA', onlineWithFriend:'Online com um amigo',
-    quit:'Sair', leave:'Sair', continueBtn:'Continuar', done:'ConcluÃ­do',
-    masterVolume:'Volume geral', musicVolume:'Volume da mÃºsica', sfxVolume:'Volume dos efeitos',
-    language:'Idioma', terms:'Termos e condiÃ§Ãµes', help:'Ajuda e suporte', createdBy:'Criado por',
+    quit:'Sair', leave:'Sair', continueBtn:'Continuar', done:'Concluído',
+    masterVolume:'Volume geral', musicVolume:'Volume da música', sfxVolume:'Volume dos efeitos',
+    language:'Idioma', terms:'Termos e condições', help:'Ajuda e suporte', createdBy:'Criado por',
     howToPlay:'Como jogar', variation:'Variante', customGame:'Jogo personalizado' },
   nl: { play:'SPELEN', draw:'Trekken', card:'KAART', settings:'Instellingen', profile:'Profiel', leaderboard:'Ranglijst',
     yourTurn:'Jouw beurt', roomCode:'Kamercode', createRoom:'Kamer aanmaken', joinCode:'Deelnemen met code',
@@ -1146,23 +1153,23 @@ const I18N = {
     language:'Taal', terms:'Algemene voorwaarden', help:'Hulp & ondersteuning', createdBy:'Gemaakt door',
     howToPlay:'Hoe te spelen', variation:'Variant', customGame:'Aangepast spel' },
   pl: { play:'GRAJ', draw:'Dobierz', card:'KARTA', settings:'Ustawienia', profile:'Profil', leaderboard:'Ranking',
-    yourTurn:'Twoja kolej', roomCode:'Kod pokoju', createRoom:'UtwÃ³rz pokÃ³j', joinCode:'DoÅ‚Ä…cz z kodem',
-    startMatch:'Rozpocznij grÄ™', offlineVsAi:'Graj offline z AI', onlineWithFriend:'Online ze znajomym',
-    quit:'WyjdÅº', leave:'OpuÅ›Ä‡', continueBtn:'Kontynuuj', done:'Gotowe',
-    masterVolume:'GÅ‚oÅ›noÅ›Ä‡ gÅ‚Ã³wna', musicVolume:'GÅ‚oÅ›noÅ›Ä‡ muzyki', sfxVolume:'GÅ‚oÅ›noÅ›Ä‡ efektÃ³w',
-    language:'JÄ™zyk', terms:'Regulamin', help:'Pomoc i wsparcie', createdBy:'Stworzone przez',
-    howToPlay:'Jak graÄ‡', variation:'Wariant', customGame:'Gra niestandardowa' },
-  sv: { play:'SPELA', draw:'Dra', card:'KORT', settings:'InstÃ¤llningar', profile:'Profil', leaderboard:'Topplista',
-    yourTurn:'Din tur', roomCode:'Rumskod', createRoom:'Skapa rum', joinCode:'GÃ¥ med kod',
-    startMatch:'Starta match', offlineVsAi:'Offline mot AI', onlineWithFriend:'Online med en vÃ¤n',
-    quit:'Avsluta', leave:'LÃ¤mna', continueBtn:'FortsÃ¤tt', done:'Klar',
+    yourTurn:'Twoja kolej', roomCode:'Kod pokoju', createRoom:'Utwórz pokój', joinCode:'Dołącz z kodem',
+    startMatch:'Rozpocznij grę', offlineVsAi:'Graj offline z AI', onlineWithFriend:'Online ze znajomym',
+    quit:'Wyjdź', leave:'Opuść', continueBtn:'Kontynuuj', done:'Gotowe',
+    masterVolume:'Głośność główna', musicVolume:'Głośność muzyki', sfxVolume:'Głośność efektów',
+    language:'Język', terms:'Regulamin', help:'Pomoc i wsparcie', createdBy:'Stworzone przez',
+    howToPlay:'Jak grać', variation:'Wariant', customGame:'Gra niestandardowa' },
+  sv: { play:'SPELA', draw:'Dra', card:'KORT', settings:'Inställningar', profile:'Profil', leaderboard:'Topplista',
+    yourTurn:'Din tur', roomCode:'Rumskod', createRoom:'Skapa rum', joinCode:'Gå med kod',
+    startMatch:'Starta match', offlineVsAi:'Offline mot AI', onlineWithFriend:'Online med en vän',
+    quit:'Avsluta', leave:'Lämna', continueBtn:'Fortsätt', done:'Klar',
     masterVolume:'Huvudvolym', musicVolume:'Musikvolym', sfxVolume:'Ljudeffekter',
-    language:'SprÃ¥k', terms:'Villkor', help:'HjÃ¤lp och support', createdBy:'Skapad av',
+    language:'Språk', terms:'Villkor', help:'Hjälp och support', createdBy:'Skapad av',
     howToPlay:'Hur man spelar', variation:'Variant', customGame:'Anpassat spel' },
 };
 function t(key){ return (I18N[settings.language] && I18N[settings.language][key]) || I18N.en[key] || key; }
 
-// ---------- Sound effects (synthesized â€” no audio files needed) ----------
+// ---------- Sound effects (synthesized — no audio files needed) ----------
 let audioCtx = null;
 function ensureAudioCtx(){
   if(audioCtx) return audioCtx;
@@ -1210,8 +1217,8 @@ function runLoadingSequence(){
   let pct = 0;
   const timer = setInterval(()=>{
     pct += 8 + Math.floor(Math.random()*14);
-    if(pct>=100){ pct=100; clearInterval(timer); pctEl.textContent = 'LOADINGâ€¦ 100%'; setTimeout(()=>{ showScreen('menu'); renderMenu(); }, 260); return; }
-    pctEl.textContent = `LOADINGâ€¦ ${pct}%`;
+    if(pct>=100){ pct=100; clearInterval(timer); pctEl.textContent = 'LOADING… 100%'; setTimeout(()=>{ showScreen('menu'); renderMenu(); }, 260); return; }
+    pctEl.textContent = `LOADING… ${pct}%`;
   }, 160);
 }
 
@@ -1226,7 +1233,7 @@ function renderMenu(){
       <button class="vcard-rules" onclick="event.stopPropagation(); openRulesModal('${key}')">Rules</button>
     </div>`;
   }).join('') + `<div class="vcard ${chosenMode==='custom'?'selected':''}" onclick="openCustomRulesScreen()">
-      <div class="vcard-badge" style="background:linear-gradient(155deg,#f3da8f,#d4af37);">âš™</div>
+      <div class="vcard-badge" style="background:linear-gradient(155deg,#f3da8f,#d4af37);">⚙</div>
       <div class="vcard-label">${chosenMode==='custom' ? customRuleConfig.short.toUpperCase() : 'CUSTOM'}</div>
       <button class="vcard-rules" onclick="event.stopPropagation(); openCustomRulesScreen()">${chosenMode==='custom'?'Edit':'Build'}</button>
     </div>`;
@@ -1236,17 +1243,17 @@ function selectMode(key){ chosenMode = key; renderMenu(); }
 
 function openHowToPlay(){
   openOverlay(`<div class="modal-card">
-    <button class="close-x" onclick="closeOverlay()">âœ•</button>
+    <button class="close-x" onclick="closeOverlay()">✕</button>
     <div class="modal-title disp">How to Play</div>
     <div class="modal-sub">Pick a variation to read its rules.</div>
     ${MODE_ORDER.map(key=>`<button class="btn btn-secondary disp" style="margin-top:8px;display:block;width:100%;" onclick="openRulesModal('${key}')">${MODES[key].name}</button>`).join('')}
-    <button class="btn btn-secondary disp" style="margin-top:8px;display:block;width:100%;border:1.5px dashed rgba(212,175,55,.5);" onclick="closeOverlay(); openCustomRulesScreen();">âš™ Build Your Own Rules</button>
+    <button class="btn btn-secondary disp" style="margin-top:8px;display:block;width:100%;border:1.5px dashed rgba(212,175,55,.5);" onclick="closeOverlay(); openCustomRulesScreen();">⚙ Build Your Own Rules</button>
   </div>`);
 }
 
 function openSettingsModal(){
   openOverlay(`<div class="modal-card">
-    <button class="close-x" onclick="closeOverlay()">âœ•</button>
+    <button class="close-x" onclick="closeOverlay()">✕</button>
     <div class="modal-title disp">${t('settings')}</div>
     <div class="modal-sub" style="margin-top:6px;">AI difficulty for offline matches</div>
     <div class="diff-row" id="settingsDiffRow"></div>
@@ -1258,7 +1265,7 @@ function openSettingsModal(){
     <div class="settings-row">
       <label class="settings-label">${t('musicVolume')} <span id="muVal"></span></label>
       <input type="range" min="0" max="100" id="muSlider" class="vol-slider" oninput="updateVolume('musicVolume', this.value)">
-      <div class="settings-note">No music track wired up in this build yet â€” this control is ready for when there is one.</div>
+      <div class="settings-note">No music track wired up in this build yet — this control is ready for when there is one.</div>
     </div>
     <div class="settings-row">
       <label class="settings-label">${t('sfxVolume')} <span id="sfVal"></span></label>
@@ -1300,8 +1307,8 @@ function updateVolumeLabels(){
 function renderLangRow(){
   const row = document.getElementById('langRow');
   if(!row) return;
-  const langs = [{k:'en',n:'English'},{k:'fr',n:'FranÃ§ais'},{k:'de',n:'Deutsch'},{k:'es',n:'EspaÃ±ol'},
-    {k:'it',n:'Italiano'},{k:'pt',n:'PortuguÃªs'},{k:'nl',n:'Nederlands'},{k:'pl',n:'Polski'},
+  const langs = [{k:'en',n:'English'},{k:'fr',n:'Français'},{k:'de',n:'Deutsch'},{k:'es',n:'Español'},
+    {k:'it',n:'Italiano'},{k:'pt',n:'Português'},{k:'nl',n:'Nederlands'},{k:'pl',n:'Polski'},
     {k:'sv',n:'Svenska'},{k:'sw',n:'Kiswahili'}];
   row.innerHTML = langs.map(l=>`<button class="pill" data-key="${l.k}" onclick="selectLanguage('${l.k}')">${l.n}</button>`).join('');
   [...row.children].forEach(btn=>btn.classList.toggle('selected', btn.dataset.key===settings.language));
@@ -1310,25 +1317,25 @@ function selectLanguage(lang){ settings.language = lang; saveSettings(); openSet
 const CREATOR_NAME = 'Safe Card Team';
 function openTermsModal(){
   openOverlay(`<div class="modal-card">
-    <button class="close-x" onclick="closeOverlay()">âœ•</button>
+    <button class="close-x" onclick="closeOverlay()">✕</button>
     <div class="modal-title disp">${t('terms')}</div>
     <div class="rules-body">
-      <p>This is a sample placeholder â€” swap in your real Terms & Conditions before release.</p>
+      <p>This is a sample placeholder — swap in your real Terms & Conditions before release.</p>
       <h4>Playing</h4><p>Safe Card is provided for entertainment. House rules for each variation are described under "How to Play."</p>
-      <h4>Online Rooms</h4><p>Room codes are casual and not authenticated â€” anyone with the code can join. Don't share sensitive information in room names.</p>
-      <h4>Accounts</h4><p>The Profile in this build is a lightweight local/shared identity, not a secured account â€” no passwords are collected or required.</p>
+      <h4>Online Rooms</h4><p>Room codes are casual and not authenticated — anyone with the code can join. Don't share sensitive information in room names.</p>
+      <h4>Accounts</h4><p>The Profile in this build is a lightweight local/shared identity, not a secured account — no passwords are collected or required.</p>
     </div>
     <button class="btn btn-primary disp" onclick="closeOverlay(); openSettingsModal();" style="margin-top:14px;">${t('done')}</button>
   </div>`);
 }
 function openHelpModal(){
   openOverlay(`<div class="modal-card">
-    <button class="close-x" onclick="closeOverlay()">âœ•</button>
+    <button class="close-x" onclick="closeOverlay()">✕</button>
     <div class="modal-title disp">${t('help')}</div>
     <div class="rules-body">
       <h4>How do I learn the rules?</h4><p>Tap "Rules" on any variation card on the main menu, or the "?" button during a match.</p>
-      <h4>How does online play work?</h4><p>One player creates a room and shares the 6-character code; a friend joins with that code. See Settings â†’ Terms for what that does and doesn't protect.</p>
-      <h4>Something's not working</h4><p>This is an actively evolving prototype â€” describe what happened in the chat and it'll get fixed.</p>
+      <h4>How does online play work?</h4><p>One player creates a room and shares the 6-character code; a friend joins with that code. See Settings → Terms for what that does and doesn't protect.</p>
+      <h4>Something's not working</h4><p>This is an actively evolving prototype — describe what happened in the chat and it'll get fixed.</p>
     </div>
     <button class="btn btn-primary disp" onclick="closeOverlay(); openSettingsModal();" style="margin-top:14px;">${t('done')}</button>
   </div>`);
@@ -1343,9 +1350,9 @@ function selectDifficultyInSettings(key){ chosenDifficulty = key; renderSettings
 
 function openPlaceholder(name){
   openOverlay(`<div class="modal-card">
-    <button class="close-x" onclick="closeOverlay()">âœ•</button>
+    <button class="close-x" onclick="closeOverlay()">✕</button>
     <div class="modal-title disp">${name}</div>
-    <div class="modal-sub">${name} isn't part of this rules-testing prototype â€” this build is focused on getting the card-game engine and AI exactly right first.</div>
+    <div class="modal-sub">${name} isn't part of this rules-testing prototype — this build is focused on getting the card-game engine and AI exactly right first.</div>
     <button class="btn btn-primary disp" onclick="closeOverlay()" style="margin-top:6px;">Got it</button>
   </div>`);
 }
@@ -1381,27 +1388,29 @@ function confirmQuit(){
 function backToMenu(){ closeOverlay(); stopPolling(); onlineMode=false; roomCode=null; G=null; showScreen('menu'); renderMenu(); }
 
 // =====================================================================
-// STORAGE BACKEND â€” auto-detects where this file is running:
-//  â€¢ Inside a Claude.ai artifact: uses window.storage (great for testing here).
-//  â€¢ Hosted anywhere else (Netlify, Firebase Hosting, your own server, etc.):
+// STORAGE BACKEND — auto-detects where this file is running:
+//  • Inside a Claude.ai artifact: uses window.storage (great for testing here).
+//  • Hosted anywhere else (Netlify, Firebase Hosting, your own server, etc.):
 //    uses your own free Firebase Firestore project instead.
 //
 // TO ENABLE REAL MULTIPLAYER HOSTING OUTSIDE CLAUDE.AI:
-//   1. Go to https://console.firebase.google.com â†’ Add project (free "Spark" plan).
-//   2. In your new project: Build â†’ Firestore Database â†’ Create database
-//      â†’ Start in *test mode* (fine for a casual game with friends).
-//   3. Project settings (gear icon) â†’ General â†’ "Your apps" â†’ Add app â†’ Web (</>) .
+//   1. Go to https://console.firebase.google.com → Add project (free "Spark" plan).
+//   2. In your new project: Build → Firestore Database → Create database
+//      → Start in *test mode* (fine for a casual game with friends).
+//   3. Project settings (gear icon) → General → "Your apps" → Add app → Web (</>) .
 //      Copy the firebaseConfig object it gives you and paste the values below.
-//   4. Re-upload/redeploy this file. That's it â€” no server, no build step.
+//   4. Re-upload/redeploy this file. That's it — no server, no build step.
 // See the full walkthrough at the bottom of this file / in the chat reply.
 // =====================================================================
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyCw-s2omUFs2fEyq7okAxbfT_vfvsB_LQI",
   authDomain: "safe-card-28d4a.firebaseapp.com",
+  databaseURL: "https://safe-card-28d4a-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "safe-card-28d4a",
   storageBucket: "safe-card-28d4a.firebasestorage.app",
   messagingSenderId: "959930577997",
-  appId: "1:959930577997:web:184e2fc11233edac191804"
+  appId: "1:959930577997:web:184e2fc11233edac191804",
+  measurementId: "G-ERFB49PVJK"
 };
 const USE_CLAUDE_STORAGE = (typeof window !== 'undefined' && typeof window.storage !== 'undefined');
 let fbDb = null, fbSdkPromise = null, fbLoadFailed = false;
@@ -1418,29 +1427,20 @@ function loadScriptOnce(src, timeoutMs){
   });
 }
 // Tries Google's official CDN first, then falls back to Cloudflare's cdnjs mirror
-// (a different domain/infrastructure entirely â€” routes around most ad-blockers
+// (a different domain/infrastructure entirely — routes around most ad-blockers
 // or network filters that specifically target Google-owned CDN domains).
 function loadFirebaseSdk(){
   if(fbSdkPromise) return fbSdkPromise;
   const V = '10.13.0';
   const sources = [
-    [
-      `https://www.gstatic.com/firebasejs/${V}/firebase-app-compat.js`,
-      `https://www.gstatic.com/firebasejs/${V}/firebase-firestore-compat.js`,
-      `https://www.gstatic.com/firebasejs/${V}/firebase-auth-compat.js`
-    ],
-    [
-      `https://cdnjs.cloudflare.com/ajax/libs/firebase/${V}/firebase-app-compat.js`,
-      `https://cdnjs.cloudflare.com/ajax/libs/firebase/${V}/firebase-firestore-compat.js`,
-      `https://cdnjs.cloudflare.com/ajax/libs/firebase/${V}/firebase-auth-compat.js`
-    ],
+    [`https://www.gstatic.com/firebasejs/${V}/firebase-app-compat.js`, `https://www.gstatic.com/firebasejs/${V}/firebase-firestore-compat.js`],
+    [`https://cdnjs.cloudflare.com/ajax/libs/firebase/${V}/firebase-app-compat.js`, `https://cdnjs.cloudflare.com/ajax/libs/firebase/${V}/firebase-firestore-compat.js`],
   ];
   fbSdkPromise = (async () => {
-    for(const scripts of sources){
+    for(const [appUrl, fsUrl] of sources){
       try{
-        for(const script of scripts){
-          await loadScriptOnce(script);
-        }
+        await loadScriptOnce(appUrl);
+        await loadScriptOnce(fsUrl);
         if(typeof firebase !== 'undefined'){ return true; }
       }catch(e){ console.warn('Firebase load attempt failed, trying next source:', e.message); }
     }
@@ -1448,69 +1448,30 @@ function loadFirebaseSdk(){
     console.error('Firebase SDK could not load from any CDN (gstatic.com or cdnjs.cloudflare.com). ' +
       'This is almost always an ad-blocker, browser privacy extension, or network-level filter (corporate wifi, ' +
       'Pi-hole, NextDNS, etc). Try a private window with extensions off, or a different network. ' +
-      'Offline vs AI still works fine either way â€” only online rooms/leaderboard need this.');
+      'Offline vs AI still works fine either way — only online rooms/leaderboard need this.');
     return false;
   })();
   return fbSdkPromise;
 }
 async function ensureFirebase(){
-  console.log("SAFE CARD: Starting Firebase...");
-
-  if(fbDb){
-    console.log("SAFE CARD: Firestore already connected.");
-    return fbDb;
-  }
-
-  console.log("SAFE CARD: Firebase config:", FIREBASE_CONFIG);
-
-  if(!firebaseConfigured()){
-    console.error("SAFE CARD: Firebase config is NOT valid.");
-    return null;
-  }
-
-  console.log("SAFE CARD: Firebase config is valid.");
-
+  if(fbDb) return fbDb;
+  if(!firebaseConfigured()) return null;
   const ok = await loadFirebaseSdk();
-  console.log("SAFE CARD: Firebase SDK loaded:", ok);
-
-  if(!ok || typeof firebase === 'undefined'){
-    console.error("SAFE CARD: Firebase SDK failed to load.");
-    return null;
-  }
-
+  if(!ok || typeof firebase==='undefined') return null;
   try{
-    if(!firebase.apps.length){
-      firebase.initializeApp(FIREBASE_CONFIG);
-      console.log("SAFE CARD: Firebase initialized.");
-    }
-
+    if(!firebase.apps.length) firebase.initializeApp(FIREBASE_CONFIG);
     fbDb = firebase.firestore();
-    console.log("SAFE CARD: Firestore connected.");
-
-    if(!firebase.auth().currentUser){
-      console.log("SAFE CARD: Signing in anonymously...");
-      await firebase.auth().signInAnonymously();
-    }
-
-    const user = firebase.auth().currentUser;
-
-    console.log("SAFE CARD: Player ID:", user ? user.uid : "NO USER");
-
-    return fbDb;
-
-  }catch(e){
-    console.error("SAFE CARD: FIREBASE ERROR:", e);
-    return null;
-  }
+  }catch(e){ console.error('Firebase init failed', e); fbDb = null; }
+  return fbDb;
 }
 function multiplayerUnavailableReason(){
-  if(USE_CLAUDE_STORAGE) return null; // using Claude storage, not Firebase â€” different failure path
-  if(!firebaseConfigured()) return 'Multiplayer needs a Firebase config â€” see the setup notes near the top of this file.';
+  if(USE_CLAUDE_STORAGE) return null; // using Claude storage, not Firebase — different failure path
+  if(!firebaseConfigured()) return 'Multiplayer needs a Firebase config — see the setup notes near the top of this file.';
   if(fbLoadFailed) return "Couldn't reach the database (often an ad-blocker or network filter blocking Google's/Cloudflare's CDN). Try a private window, or a different network.";
   return null;
 }
 function noBackendWarning(){
-  console.error('No storage backend available â€” inside Claude.ai this needs window.storage; ' +
+  console.error('No storage backend available — inside Claude.ai this needs window.storage; ' +
     'hosted elsewhere it needs a real FIREBASE_CONFIG filled in near the top of the script.');
 }
 async function storageSet(key, value, shared){
@@ -1523,12 +1484,7 @@ async function storageSet(key, value, shared){
   try{
     await db.collection('safecard_kv').doc(key).set({ value: JSON.stringify(value), updatedAt: Date.now() });
     return { key, value };
-  }catch(e){
-    console.error('Firebase init failed:', e);
-    console.error('Firebase error code:', e.code);
-    console.error('Firebase error message:', e.message);
-    fbDb = null;
-  }
+  }catch(e){ console.error('firebase set failed', e); return null; }
 }
 async function storageGet(key, shared){
   if(USE_CLAUDE_STORAGE){
@@ -1589,7 +1545,7 @@ function storageWatch(key, shared, onChange){
 }
 
 // =====================================================================
-// ONLINE ROOMS â€” casual, not cheat-proof: room data is readable by anyone
+// ONLINE ROOMS — casual, not cheat-proof: room data is readable by anyone
 // with the room code (hands are hidden in the UI, not encrypted). Fine for
 // playing with friends; not meant for competitive/ranked integrity.
 // =====================================================================
@@ -1603,7 +1559,7 @@ function stopPolling(){ if(roomUnsub){ roomUnsub(); roomUnsub=null; } }
 
 
 // =====================================================================
-// LEADERBOARD (shared storage â€” visible to everyone who opens this artifact)
+// LEADERBOARD (shared storage — visible to everyone who opens this artifact)
 // =====================================================================
 async function recordGameResult(winnerName, humanNames){
   try{
@@ -1632,20 +1588,253 @@ async function fetchLeaderboard(){
     return entries;
   }catch(e){ return []; }
 }
+
+// =====================================================================
+// PROFILE
+// =====================================================================
+async function openProfile(){
+  const name = (myName || '').trim();
+
+  if(!name || name === 'You'){
+    openOverlay(`
+      <div class="modal-card">
+        <button class="close-x" onclick="closeOverlay()">✕</button>
+        <div class="modal-title disp">👤 Profile</div>
+        <div class="modal-sub">Enter your player name first.</div>
+
+        <input
+          id="profileNameInput"
+          class="text-input"
+          maxlength="16"
+          placeholder="Your name"
+          style="width:100%;margin:15px 0;"
+        >
+
+        <button
+          class="btn btn-primary"
+          onclick="saveProfileName()"
+        >
+          Save Name
+        </button>
+      </div>
+    `);
+    return;
+  }
+
+  openOverlay(`
+    <div class="modal-card">
+      <button class="close-x" onclick="closeOverlay()">✕</button>
+
+      <div class="modal-title disp">👤 Profile</div>
+
+      <div style="font-size:25px;font-weight:800;margin:12px 0;">
+        ${escapeHtml(name)}
+      </div>
+
+      <div id="profileStats" style="text-align:left;">
+        Loading your statistics…
+      </div>
+
+      <button
+        class="btn btn-secondary"
+        style="margin-top:18px;"
+        onclick="changeProfileName()"
+      >
+        ✏️ Change Name
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        style="margin-top:10px;"
+        onclick="openLeaderboard()"
+      >
+        🏆 View Leaderboard
+      </button>
+    </div>
+  `);
+
+  await loadProfileStats(name);
+}
+
+
+function escapeHtml(text){
+  return String(text || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+
+async function saveProfileName(){
+  const input = document.getElementById('profileNameInput');
+
+  if(!input) return;
+
+  const name = input.value.trim();
+
+  if(!name){
+    alert('Please enter your name.');
+    return;
+  }
+
+  myName = name.slice(0,16);
+
+  try{
+    localStorage.setItem('safecard_player_name', myName);
+  }catch(e){}
+
+  closeOverlay();
+
+  // Refresh the game/menu so the new name is used everywhere.
+  if(typeof render === 'function'){
+    try{ render(); }catch(e){}
+  }
+
+  openProfile();
+}
+
+
+function changeProfileName(){
+  openOverlay(`
+    <div class="modal-card">
+      <button class="close-x" onclick="closeOverlay()">✕</button>
+
+      <div class="modal-title disp">✏️ Change Name</div>
+
+      <input
+        id="profileNameInput"
+        class="text-input"
+        maxlength="16"
+        value="${escapeHtml(myName || '')}"
+        style="width:100%;margin:15px 0;"
+      >
+
+      <button
+        class="btn btn-primary"
+        onclick="saveProfileName()"
+      >
+        Save Name
+      </button>
+    </div>
+  `);
+}
+
+
+async function loadProfileStats(name){
+  const box = document.getElementById('profileStats');
+
+  if(!box) return;
+
+  try{
+    const key = 'leaderboard:' + name.trim().toLowerCase();
+
+    const entry = await storageGet(key, true);
+
+    const stats = entry || {
+      name: name,
+      wins: 0,
+      games: 0
+    };
+
+    const wins = Number(stats.wins || 0);
+    const games = Number(stats.games || 0);
+
+    let rank = '—';
+
+    try{
+      const entries = await getLeaderboardEntries();
+
+      const sorted = entries.sort(
+        (a,b) =>
+          Number(b.wins || 0) - Number(a.wins || 0) ||
+          Number(b.games || 0) - Number(a.games || 0) ||
+          String(a.name || '').localeCompare(String(b.name || ''))
+      );
+
+      const position = sorted.findIndex(
+        x => String(x.name || '').toLowerCase() === name.toLowerCase()
+      );
+
+      if(position >= 0){
+        rank = position + 1;
+      }
+    }catch(e){}
+
+    box.innerHTML = `
+      <div style="
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+        margin-top:15px;
+      ">
+
+        <div style="
+          padding:15px;
+          border-radius:14px;
+          background:rgba(255,255,255,.06);
+        ">
+          <div style="font-size:26px;font-weight:900;">
+            ${wins}
+          </div>
+          <div>🏆 Total Wins</div>
+        </div>
+
+        <div style="
+          padding:15px;
+          border-radius:14px;
+          background:rgba(255,255,255,.06);
+        ">
+          <div style="font-size:26px;font-weight:900;">
+            ${games}
+          </div>
+          <div>🎮 Games Played</div>
+        </div>
+
+        <div style="
+          padding:15px;
+          border-radius:14px;
+          background:rgba(255,255,255,.06);
+          grid-column:1 / -1;
+        ">
+          <div style="font-size:30px;font-weight:900;">
+            ${rank === '—' ? '—' : '#' + rank}
+          </div>
+          <div>🥇 Leaderboard Position</div>
+        </div>
+
+      </div>
+    `;
+
+  }catch(error){
+
+    console.error('Profile error:', error);
+
+    box.innerHTML = `
+      <div style="padding:15px;">
+        Unable to load your statistics right now.
+      </div>
+    `;
+  }
+}
+
+
+
 async function openLeaderboard(){
   openOverlay(`<div class="modal-card">
-    <button class="close-x" onclick="closeOverlay()">âœ•</button>
-    <div class="modal-title disp">ðŸ† Leaderboard</div>
+    <button class="close-x" onclick="closeOverlay()">✕</button>
+    <div class="modal-title disp">🏆 Leaderboard</div>
     <div class="modal-sub">Ranked by wins, across everyone who's played this build.</div>
-    <div id="leaderboardBody" style="text-align:left;">Loadingâ€¦</div>
+    <div id="leaderboardBody" style="text-align:left;">Loading…</div>
   </div>`);
   const entries = await fetchLeaderboard();
   const body = document.getElementById('leaderboardBody');
   if(!body) return; // overlay was closed before this resolved
-  if(entries.length===0){ body.innerHTML = `<div class="modal-sub" style="text-align:center;">No finished games yet â€” play one to be the first on the board!</div>`; return; }
+  if(entries.length===0){ body.innerHTML = `<div class="modal-sub" style="text-align:center;">No finished games yet — play one to be the first on the board!</div>`; return; }
   body.innerHTML = `<div style="display:flex;flex-direction:column;gap:6px;">` + entries.slice(0,20).map((e,i)=>{
     const pct = e.games ? Math.round(100*e.wins/e.games) : 0;
-    const medal = i===0?'ðŸ¥‡':i===1?'ðŸ¥ˆ':i===2?'ðŸ¥‰':`${i+1}.`;
+    const medal = i===0?'🥇':i===1?'🥈':i===2?'🥉':`${i+1}.`;
     const mine = myName && e.name.toLowerCase()===myName.trim().toLowerCase();
     return `<div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;
       background:${mine?'rgba(59,130,246,.18)':'rgba(255,255,255,.04)'};border:1px solid ${mine?'rgba(59,130,246,.4)':'var(--border-glass)'};">
@@ -1674,7 +1863,7 @@ function renderFriendsScreen(){
   if(friendsTab==='create'){
     body.innerHTML = `<div class="ls-panel">
       <div class="panel-icon-row">
-        <div class="panel-icon">ðŸ‘¥</div>
+        <div class="panel-icon">👥</div>
         <div>
           <div class="ptitle">Create a Room</div>
           <div class="psub">Share the code to invite a friend</div>
@@ -1688,13 +1877,13 @@ function renderFriendsScreen(){
       <div class="circle-row" id="roomSizeRow" style="margin-bottom:14px;">
         ${[2,3,4,5,6,7,8].map(n=>`<div class="circle-btn ${chosenRoomMax===n?'selected':''}" onclick="selectRoomMax(${n})">${n}</div>`).join('')}
       </div>
-      <div class="settings-note" style="color:#8a93a6;margin-bottom:14px;">Empty seats can be filled with AI, or left open for friends to join with the code below. This runs on ${firebaseConfigured() || USE_CLAUDE_STORAGE ? 'shared storage' : 'shared storage â€” see hosting notes'}: casual and code-shareable, not cheat-proof.</div>
+      <div class="settings-note" style="color:#8a93a6;margin-bottom:14px;">Empty seats can be filled with AI, or left open for friends to join with the code below. This runs on ${firebaseConfigured() || USE_CLAUDE_STORAGE ? 'shared storage' : 'shared storage — see hosting notes'}: casual and code-shareable, not cheat-proof.</div>
       <button class="light-btn-primary disp" onclick="captureNameThen('doCreateRoom')">Create Room</button>
     </div>`;
   } else {
     body.innerHTML = `<div class="ls-panel">
       <div class="panel-icon-row">
-        <div class="panel-icon">ðŸ”‘</div>
+        <div class="panel-icon">🔑</div>
         <div>
           <div class="ptitle">Join a Room</div>
           <div class="psub">Enter the 6-character code</div>
@@ -1745,11 +1934,11 @@ function selectPlayerCount(n){ chosenPlayerCount = n; renderOpponentsScreen(); }
 function startMatchFromOpponentsScreen(){ startMatch(chosenPlayerCount - 1); }
 
 // ---------- Custom Rules ----------
-// Any combination of these toggles is legal to the engine â€” Game.cfg() just
+// Any combination of these toggles is legal to the engine — Game.cfg() just
 // reads whichever flags are set, the exact same way it reads a preset MODES entry.
 let customRuleConfig = {
   name: 'Custom Rules', short: 'Custom', tag: 'Your rules',
-  desc: 'A ruleset you configure yourself â€” mix and match however you like.',
+  desc: 'A ruleset you configure yourself — mix and match however you like.',
   suitLockedStacking: true, deflectionEnabled: true, targetedAttacks: false,
   cardButtonRequired: true, elimination: false,
   startingHandSize: 4, attackValues: {'2':2,'3':3,'JOKER':5},
@@ -1782,7 +1971,7 @@ function renderCustomRulesScreen(){
     <div class="stepper-row">
       <div class="sname">${label} draws</div>
       <div class="stepper-controls">
-        <button class="stepper-btn" onclick="adjustCustomAttackValue('${rank}',-1)">âˆ’</button>
+        <button class="stepper-btn" onclick="adjustCustomAttackValue('${rank}',-1)">−</button>
         <div class="stepper-val">${customRuleConfig.attackValues[rank]}</div>
         <button class="stepper-btn" onclick="adjustCustomAttackValue('${rank}',1)">+</button>
       </div>
@@ -1806,7 +1995,7 @@ function saveCustomRules(){
   renderMenu();
 }
 // Looks up a mode's display/rules info whether it's a built-in preset or the
-// user's custom ruleset â€” everywhere the UI used to do MODES[key] directly.
+// user's custom ruleset — everywhere the UI used to do MODES[key] directly.
 function getModeConfig(key){ return key==='custom' ? customRuleConfig : MODES[key]; }
 
 
@@ -1818,7 +2007,7 @@ async function doCreateRoom(){
   const room = { seq: 1, status:'lobby', mode: chosenMode, difficulty: chosenDifficulty, maxPlayers: max, slots, game: null,
     customConfig: chosenMode==='custom' ? customRuleConfig : null };
   const res = await storageSet('room:'+code, room, true);
-  if(!res){ setHint(multiplayerUnavailableReason() || 'Could not create a room â€” try again.', 'error'); return; }
+  if(!res){ setHint(multiplayerUnavailableReason() || 'Could not create a room — try again.', 'error'); return; }
   roomCode = code; roomSeq = room.seq; isHost = true; myIdx = 0; onlineMode = true;
   closeOverlay();
   showScreen('lobby');
@@ -1839,7 +2028,7 @@ async function doJoinRoom(){
   room.slots[openIdx] = {name: myName, isAI:false};
   room.seq = (room.seq||1)+1;
   const res = await storageSet('room:'+code, room, true);
-  if(!res){ showErr(multiplayerUnavailableReason() || 'Could not join â€” try again.'); return; }
+  if(!res){ showErr(multiplayerUnavailableReason() || 'Could not join — try again.'); return; }
   roomCode = code; roomSeq = room.seq; isHost = false; myIdx = openIdx; onlineMode = true;
   chosenMode = room.mode; chosenDifficulty = room.difficulty;
   if(room.mode==='custom' && room.customConfig) customRuleConfig = room.customConfig;
@@ -1855,8 +2044,8 @@ function renderLobby(room){
   const filledCount = room.slots.filter(Boolean).length;
   const hasEmpty = room.slots.some(s=>!s);
   const rows = room.slots.map((s,i)=>{
-    if(!s) return `<div class="lobby-seat empty">Empty seat${isHost ? ' â€” add a friend or AI' : ''}</div>`;
-    return `<div class="lobby-seat filled">${s.name}${s.isAI?' ðŸ¤–':''} ${i===myIdx?'(you)':''}</div>`;
+    if(!s) return `<div class="lobby-seat empty">Empty seat${isHost ? ' — add a friend or AI' : ''}</div>`;
+    return `<div class="lobby-seat filled">${s.name}${s.isAI?' 🤖':''} ${i===myIdx?'(you)':''}</div>`;
   }).join('');
   document.getElementById('lobbySeats').innerHTML = rows;
   const controls = document.getElementById('lobbyControls');
@@ -1866,7 +2055,7 @@ function renderLobby(room){
     html += `<button class="btn btn-primary disp" ${filledCount<2?'disabled':''} onclick="hostStartOnlineMatch()">Start Match${hasEmpty?' (fills empty seats with AI)':''}</button>`;
     controls.innerHTML = html;
   } else {
-    controls.innerHTML = `<div class="modal-sub">Waiting for the host to start the matchâ€¦</div>`;
+    controls.innerHTML = `<div class="modal-sub">Waiting for the host to start the match…</div>`;
   }
 }
 
@@ -1912,7 +2101,7 @@ async function pushGameState(){
   if(res) roomSeq = room.seq;
 }
 
-// Called whenever the shared room document changes â€” either pushed in real
+// Called whenever the shared room document changes — either pushed in real
 // time by Firestore, or picked up by the polling fallback inside Claude.ai.
 function onRoomChanged(room){
   if(!onlineMode || !roomCode) return;
@@ -1942,27 +2131,27 @@ function leaveLobby(){ stopPolling(); onlineMode=false; roomCode=null; showScree
 const RULES_HTML = {
   safe: `<h4>Basics</h4><ul><li>Match the top card by suit or rank, or draw if you can't.</li></ul>
     <h4>Special cards</h4><ul>
-    <li><b>2 / 3 / Joker</b> â€” attack cards. Draw 2 / 3 / 5 unless the target stacks another attack card of the <b>same suit</b> on top.</li>
-    <li><b>Ace</b> â€” demands a suit. The next player must follow it, or draw 1 card per turn until they do. Another Ace can override with a brand-new suit.</li>
-    <li><b>King</b> â€” reverses direction.</li>
-    <li><b>Jack</b> â€” skips the next player.</li>
-    <li><b>Queen / 8</b> â€” Question Cards. Must be followed immediately by a same-suit 4/5/6/7/9/10, then any suit of that same rank. No follow-up available? You may still play it alone, but you draw 1 penalty card.</li>
+    <li><b>2 / 3 / Joker</b> — attack cards. Draw 2 / 3 / 5 unless the target stacks another attack card of the <b>same suit</b> on top.</li>
+    <li><b>Ace</b> — demands a suit. The next player must follow it, or draw 1 card per turn until they do. Another Ace can override with a brand-new suit.</li>
+    <li><b>King</b> — reverses direction.</li>
+    <li><b>Jack</b> — skips the next player.</li>
+    <li><b>Queen / 8</b> — Question Cards. Must be followed immediately by a same-suit 4/5/6/7/9/10, then any suit of that same rank. No follow-up available? You may still play it alone, but you draw 1 penalty card.</li>
     </ul>
-    <h4>Winning</h4><ul><li>You can only finish with 4, 5, 6, 7, 9 or 10 â€” alone, in a same-rank group, or after a Question Card chain. Never with A, 2, 3, J, a lone Q, K or Joker.</li>
+    <h4>Winning</h4><ul><li>You can only finish with 4, 5, 6, 7, 9 or 10 — alone, in a same-rank group, or after a Question Card chain. Never with A, 2, 3, J, a lone Q, K or Joker.</li>
     <li>Press <b>CARD</b> before playing your final combination. Forget, and you draw a penalty card instead of winning.</li></ul>`,
   bomb: `<p>Everything from Classic, plus:</p><ul>
-    <li>Attack cards (2 / 3 / Joker) stack freely â€” <b>no suit restriction</b>.</li>
+    <li>Attack cards (2 / 3 / Joker) stack freely — <b>no suit restriction</b>.</li>
     <li><b>King</b> can reflect an attack straight back to whoever sent it, regardless of suit.</li>
-    <li><b>Jack</b> can deflect an attack â€” you're skipped and it passes to the next player, regardless of suit.</li>
+    <li><b>Jack</b> can deflect an attack — you're skipped and it passes to the next player, regardless of suit.</li>
     <li>The <b>CARD</b> button is still required before your winning play.</li>
     </ul>`,
   bubu: `<p>Everything from Bomb ni Bomb, except:</p><ul>
-    <li><b>No CARD button</b> â€” the moment you legally play your last card(s), you win instantly.</li>
+    <li><b>No CARD button</b> — the moment you legally play your last card(s), you win instantly.</li>
     <li>Attack cards can target <b>any player</b> at the table, not just the next one in line.</li>
     </ul>`,
   deathmatch: `<p>All Bomb ni Bomb + Game ni Bubu rules, played across multiple rounds:</p><ul>
     <li>First to legally finish wins the round.</li>
-    <li>Every other player counts their remaining cards â€” whoever holds the <b>most</b> is eliminated from the match.</li>
+    <li>Every other player counts their remaining cards — whoever holds the <b>most</b> is eliminated from the match.</li>
     <li>If players tie for the most cards, it's broken by comparing each tied player's single highest-value card.</li>
     <li>Survivors reshuffle and start a fresh round. Last player standing is the <b>Deathmatch Champion</b>.</li>
     </ul>`
@@ -1977,7 +2166,7 @@ function customRulesSummaryHtml(cfg){
       <li>CARD button required: ${yn(cfg.cardButtonRequired)}</li>
       <li>Deathmatch-style elimination rounds: ${yn(cfg.elimination)}</li>
       <li>Starting hand size: <b>${cfg.startingHandSize}</b> cards</li>
-      <li>Attack draws: <b>2</b> â†’ +${cfg.attackValues['2']}, <b>3</b> â†’ +${cfg.attackValues['3']}, <b>Joker</b> â†’ +${cfg.attackValues.JOKER}</li>
+      <li>Attack draws: <b>2</b> → +${cfg.attackValues['2']}, <b>3</b> → +${cfg.attackValues['3']}, <b>Joker</b> → +${cfg.attackValues.JOKER}</li>
     </ul>
     <p>Everything else (matching by suit/rank, Question Cards, Ace suit demands, finishing only with 4/5/6/7/9/10) works the same as the base game.</p>`;
 }
@@ -1985,7 +2174,7 @@ function openRulesModal(key){
   const m = getModeConfig(key);
   const body = key==='custom' ? customRulesSummaryHtml(m) : RULES_HTML[key];
   openOverlay(`<div class="modal-card">
-    <button class="close-x" onclick="closeOverlay()">âœ•</button>
+    <button class="close-x" onclick="closeOverlay()">✕</button>
     <div class="modal-title disp">${m.name}</div>
     <div class="rules-body">${body}</div>
     ${key==='custom' ? `<button class="btn btn-secondary disp" onclick="closeOverlay(); openCustomRulesScreen();" style="margin-top:10px;">Edit These Rules</button>` : ''}
@@ -2014,9 +2203,9 @@ function cardHtml(card, opts){
   const onclick = opts.clickable!==false ? `onclick="toggleCard('${card.id}')"` : '';
   if(card.rank==='JOKER'){
     return `<div class="${cls.join(' ')}" ${onclick}>
-      <div class="corner-tl">JK<br>â˜…</div>
-      <div class="pip">â˜…</div>
-      <div class="corner-br">JK<br>â˜…</div>
+      <div class="corner-tl">JK<br>★</div>
+      <div class="pip">★</div>
+      <div class="corner-br">JK<br>★</div>
     </div>`;
   }
   const label = `${card.rank}<br>${SUIT_SYMBOL[card.suit]}`;
@@ -2028,7 +2217,7 @@ function cardHtml(card, opts){
 }
 
 function computeHintClass(card){
-  if(G.difficulty!=='easy') return ''; // guidance only on Easy â€” Medium/Hard+ show no hints
+  if(G.difficulty!=='easy') return ''; // guidance only on Easy — Medium/Hard+ show no hints
   const humanHand = G.players[myIdx].hand;
   if(G.pendingAttack && G.pendingAttack.targetIdx===myIdx){
     if(G.canStackAttack(card)) return 'hint-attack';
@@ -2057,9 +2246,9 @@ function renderGame(){
   const top = G.top();
   const relevantSuit = G.pendingDemand ? G.pendingDemand.suit : (top && top.suit ? top.suit : null);
   const atkOn = !!G.pendingAttack;
-  const pillLabel = G.pendingDemand && G.pendingDemand.rank ? `${G.pendingDemand.rank}${SUIT_SYMBOL[relevantSuit]}` : (relevantSuit ? SUIT_SYMBOL[relevantSuit] : 'â€”');
+  const pillLabel = G.pendingDemand && G.pendingDemand.rank ? `${G.pendingDemand.rank}${SUIT_SYMBOL[relevantSuit]}` : (relevantSuit ? SUIT_SYMBOL[relevantSuit] : '—');
   document.getElementById('suitPill').innerHTML =
-    `Suit ${pillLabel} &nbsp; <span class="${atkOn?'atk-live':''}">âš¡${atkOn?G.pendingAttack.total:0}</span> &nbsp; ${G.direction===1?'â†’':'â†'}`;
+    `Suit ${pillLabel} &nbsp; <span class="${atkOn?'atk-live':''}">⚡${atkOn?G.pendingAttack.total:0}</span> &nbsp; ${G.direction===1?'→':'←'}`;
 
   const wm = document.getElementById('tableWatermark');
   if(G.pendingDemand){
@@ -2079,11 +2268,11 @@ function renderGame(){
     const fan = Array.from({length:backCount}).map((_,i)=>cardHtml(null,{faceDown:true, brand:i===backCount-1})).join('');
     const isActing = G.currentIdx===p.idx && !G.roundOver && !G.gameOver;
     const thinking = isActing && p.isAI && aiThinkingFlag;
-    const label = p.isAI ? p.name : (p.name.length>9 ? p.name.slice(0,8)+'â€¦' : p.name);
+    const label = p.isAI ? p.name : (p.name.length>9 ? p.name.slice(0,8)+'…' : p.name);
     return `<div class="opp-panel ${isActing?'acting':''}">
       <div class="opp-pill"><span class="dot"></span>${label} &middot; ${p.hand.length}</div>
       <div class="card-fan-back">${fan}</div>
-      <div class="opp-thinking ${thinking?'':'hidden'}">thinkingâ€¦</div>
+      <div class="opp-thinking ${thinking?'':'hidden'}">thinking…</div>
     </div>`;
   }).join('');
 
@@ -2105,7 +2294,7 @@ function renderGame(){
     const closeToFinish = !humanCardPressed && !!G.getFinishingPlay(myIdx);
     cardBtn.classList.toggle('close-to-finish', closeToFinish);
     cardBtn.classList.toggle('pressed', humanCardPressed);
-    cardBtn.innerHTML = humanCardPressed ? 'âœ“ CARD' : 'âœ¨ CARD';
+    cardBtn.innerHTML = humanCardPressed ? '✓ CARD' : '✨ CARD';
   } else {
     cardBtn.classList.add('hidden');
   }
@@ -2117,10 +2306,10 @@ function renderGame(){
   if(iAmEliminated){
     secondaryBtn.disabled = true; playBtn.disabled = true;
     statusPill.textContent = 'Spectating';
-    setHint('You were eliminated this match â€” watching the rest play out.', '');
+    setHint('You were eliminated this match — watching the rest play out.', '');
   } else if(!isHumanTurn){
     secondaryBtn.disabled = true; playBtn.disabled = true;
-    secondaryBtn.innerHTML = 'â†º Draw';
+    secondaryBtn.innerHTML = '↺ Draw';
     const curName = G.players[G.currentIdx] ? G.players[G.currentIdx].name : '';
     statusPill.textContent = G.roundOver ? 'Round over' : `${curName}'s turn`;
     const lastLog = G.log[G.log.length-1] || '';
@@ -2129,10 +2318,13 @@ function renderGame(){
     statusPill.textContent = 'Your turn';
     secondaryBtn.disabled = false;
     if(G.pendingAttack && G.pendingAttack.targetIdx===myIdx) secondaryBtn.innerHTML = `Accept (+${G.pendingAttack.total})`;
-    else if(G.pendingDemand && G.currentIdx===myIdx) secondaryBtn.innerHTML = "Can't Follow â€” Draw";
-    else secondaryBtn.innerHTML = 'â†º Draw';
+    else if(G.pendingDemand && G.currentIdx===myIdx) secondaryBtn.innerHTML = "Can't Follow — Draw";
+    else secondaryBtn.innerHTML = '↺ Draw';
     const action = computeAction();
-    playBtn.disabled = !action.valid;
+    // Keep PLAY clickable whenever the player has selected a card.
+    // handlePlay() will explain why an invalid selection cannot be played.
+    const hasSelection = selected.size > 0;
+    playBtn.disabled = !hasSelection;
     if(!lastHint.manual) setHint(action.message, action.valid ? (action.isFinish?'good':'') : 'error');
   }
   lastHint.manual = false;
@@ -2145,36 +2337,17 @@ function setHint(msg, cls){ lastHint = {msg, cls}; const el = document.getElemen
 function renderLog(){
   const panel = document.getElementById('logPanel');
   panel.classList.toggle('open', logOpen);
-  document.getElementById('logToggle').textContent = (logOpen?'â–´ hide':'â–¾ show')+' game log';
+  document.getElementById('logToggle').textContent = (logOpen?'▴ hide':'▾ show')+' game log';
   panel.innerHTML = [...G.log].slice(-40).reverse().map(l=>`<div class="log-line">${l}</div>`).join('');
 }
 function toggleLog(){ logOpen = !logOpen; renderLog(); }
 
 // ---------- Selection & actions ----------
-
-
 function toggleCard(id){
   if(G.currentIdx!==myIdx || G.roundOver || G.gameOver) return;
-
-  const el = document.querySelector(`[onclick="toggleCard('${id}')"]`);
-
-  if(selected.has(id)){
-    selected.delete(id);
-    if(el) el.classList.remove('selected');
-  } else {
-    selected.add(id);
-    if(el) el.classList.add('selected');
-  }
-
-  const playBtn = document.getElementById('playBtn');
-  if(playBtn){
-    const action = computeAction();
-    playBtn.disabled = !action.valid;
-  }
+  if(selected.has(id)) selected.delete(id); else selected.add(id);
+  renderGame();
 }
-
-
-
 function getSelectedCards(){
   const hand = G.players[myIdx].hand;
   return hand.filter(c=>selected.has(c.id));
@@ -2213,7 +2386,7 @@ function computeAction(){
       const label = sel.length>1 ? sel.map(fmt).join(', ') : fmt(sel[0]);
       return {valid:true, kind:'satisfy', cards:sel, message:`Play ${label} to follow the demand.`};
     }
-    return {valid:false, message:`Those cards don't follow the ${demandLabel} demand â€” they must share a rank and include a ${demandLabel} card.`};
+    return {valid:false, message:`Those cards don't follow the ${demandLabel} demand — they must share a rank and include a ${demandLabel} card.`};
   }
   if(sel.length===0) return {valid:false, message:'Select a card (or cards) to play.'};
 
@@ -2221,10 +2394,10 @@ function computeAction(){
     const c = sel[0];
     if(!G.matchesTop(c)) return {valid:false, message:"Must match the top card's suit or rank."};
     if(isAttackCard(c)) return {valid:true, kind:'attackInit', cards:[c], needsTarget:multiTargetPossible(), message:`Attack with ${fmt(c)}.`};
-    if(c.rank==='J') return {valid:true, kind:'jackNormal', cards:[c], message:'Play Jack â€” skip the next player.'};
-    if(c.rank==='K') return {valid:true, kind:'kingNormal', cards:[c], message:'Play King â€” reverse direction.'};
+    if(c.rank==='J') return {valid:true, kind:'jackNormal', cards:[c], message:'Play Jack — skip the next player.'};
+    if(c.rank==='K') return {valid:true, kind:'kingNormal', cards:[c], message:'Play King — reverse direction.'};
     if(c.rank==='A') return {valid:true, kind:'aceNormal', cards:[c], needsSuit:true, message:'Play Ace and choose a suit to demand.'};
-    if(isQuestionCard(c)) return {valid:true, kind:'questionChainAlone', cards:[c], message:'No follow-up â€” this will cost a penalty card.'};
+    if(isQuestionCard(c)) return {valid:true, kind:'questionChainAlone', cards:[c], message:'No follow-up — this will cost a penalty card.'};
     if(isFinishRank(c.rank)){
       const fp = G.getFinishingPlay(myIdx);
       const isFinish = fp && idsEqual(fp, [c.id]);
@@ -2257,7 +2430,7 @@ function computeAction(){
   }
   if(qsel.length>=2 && nonQsel.length===0){
     if(!qsel.some(c=>G.matchesTop(c))) return {valid:false, message:"At least one Question Card must match the top card's suit or rank."};
-    return {valid:true, kind:'questionChainAlone', cards:qsel, message:`Play ${qsel.map(fmt).join(' + ')} â€” no follow-up costs a penalty card.`};
+    return {valid:true, kind:'questionChainAlone', cards:qsel, message:`Play ${qsel.map(fmt).join(' + ')} — no follow-up costs a penalty card.`};
   }
   return {valid:false, message:"Those cards can't be played together."};
 }
@@ -2285,9 +2458,9 @@ function handlePlay(){
       if(mistakeStreak >= FINE_THRESHOLD){
         mistakeStreak = 0;
         G.drawCards(1, myIdx);
-        G.logMsg(`${G.players[myIdx].name} misplayed too many times in a row â€” fined 1 card.`);
+        G.logMsg(`${G.players[myIdx].name} misplayed too many times in a row — fined 1 card.`);
         renderGame();
-        setHint('âš  Too many misplays â€” fined 1 card.', 'error'); lastHint.manual = true;
+        setHint('⚠ Too many misplays — fined 1 card.', 'error'); lastHint.manual = true;
         if(onlineMode) pushGameState();
       }
     }
@@ -2306,7 +2479,7 @@ function resolveTarget(extraTargetIdx){
 function openTargetModal(action){
   const others = G.activePlayers().filter(p=>p.idx!==myIdx);
   const btn = (p)=>`<button class="btn btn-secondary disp" style="width:100%;margin-top:8px;"
-    onclick='executeAction(${JSON.stringify(action)}, {targetIdx:${p.idx}})'>${p.name} â€” ${p.hand.length} card${p.hand.length===1?'':'s'}${p.isAI?' ðŸ¤–':''}</button>`;
+    onclick='executeAction(${JSON.stringify(action)}, {targetIdx:${p.idx}})'>${p.name} — ${p.hand.length} card${p.hand.length===1?'':'s'}${p.isAI?' 🤖':''}</button>`;
   openOverlay(`<div class="modal-card">
     <div class="modal-title disp">Attack who?</div>
     ${others.map(btn).join('')}
@@ -2339,7 +2512,7 @@ function executeAction(action, extra){
   if(won){ humanCardPressed = false; }
   else if(humanCardPressed && (humanActionsCount - humanCardPressedAtActionCount >= 2)){
     humanCardPressed = false;
-    G.logMsg(`${G.players[myIdx].name} didn't finish that round â€” CARD declaration lapses.`);
+    G.logMsg(`${G.players[myIdx].name} didn't finish that round — CARD declaration lapses.`);
   }
   closeOverlay();
   afterHumanMove();
@@ -2347,15 +2520,15 @@ function executeAction(action, extra){
 function openAceTypeModal(action){
   openOverlay(`<div class="modal-card">
     <div class="modal-title disp">Play your Ace</div>
-    <div class="modal-sub">A normal Ace demands a suit. A Special Ace demands an exact suit <i>and</i> rank â€” much harder to follow.</div>
+    <div class="modal-sub">A normal Ace demands a suit. A Special Ace demands an exact suit <i>and</i> rank — much harder to follow.</div>
     <button class="btn btn-primary disp" style="width:100%;" onclick='openSuitModal(${JSON.stringify(action)}, false)'>Request a Suit</button>
-    <button class="btn btn-secondary disp" style="width:100%;margin-top:10px;" onclick='openSuitModal(${JSON.stringify(action)}, true)'>âœ¦ Special Ace â€” Suit + Rank</button>
+    <button class="btn btn-secondary disp" style="width:100%;margin-top:10px;" onclick='openSuitModal(${JSON.stringify(action)}, true)'>✦ Special Ace — Suit + Rank</button>
   </div>`);
 }
 function openSuitModal(action, special){
   const suitBtn = (s)=>`<button class="suit-btn ${(s==='H'||s==='D')?'red':''}" onclick='pickDemandSuit(${JSON.stringify(action)}, "${s}", ${!!special})'>${SUIT_SYMBOL[s]}</button>`;
   openOverlay(`<div class="modal-card">
-    <div class="modal-title disp">${special? 'Special Ace â€” choose a suit' : 'Choose a suit to demand'}</div>
+    <div class="modal-title disp">${special? 'Special Ace — choose a suit' : 'Choose a suit to demand'}</div>
     <div class="suit-grid">${SUITS.map(suitBtn).join('')}</div>
   </div>`);
 }
@@ -2366,8 +2539,8 @@ function pickDemandSuit(action, suit, special){
 function openRankModal(action, suit){
   const rankBtn = (r)=>`<button class="pill" onclick='executeAction(${JSON.stringify(action)}, {suit:"${suit}", rank:"${r}"})'>${r}</button>`;
   openOverlay(`<div class="modal-card">
-    <div class="modal-title disp">Special Ace â€” choose a rank</div>
-    <div class="modal-sub">Demanding ${SUIT_SYMBOL[suit]} â€” now pick the exact rank too.</div>
+    <div class="modal-title disp">Special Ace — choose a rank</div>
+    <div class="modal-sub">Demanding ${SUIT_SYMBOL[suit]} — now pick the exact rank too.</div>
     <div class="diff-row">${RANKS.map(rankBtn).join('')}</div>
   </div>`);
 }
@@ -2381,7 +2554,7 @@ function handleSecondary(){
   humanActionsCount++;
   if(humanCardPressed && (humanActionsCount - humanCardPressedAtActionCount >= 2)){
     humanCardPressed = false;
-    G.logMsg(`${G.players[myIdx].name} didn't finish that round â€” CARD declaration lapses.`);
+    G.logMsg(`${G.players[myIdx].name} didn't finish that round — CARD declaration lapses.`);
   }
   afterHumanMove();
 }
@@ -2425,14 +2598,14 @@ function showRoundEndOverlay(){
   const isElim = G.cfg().elimination;
   let sub = '';
   if(isElim){
-    sub = G.activePlayers().map(p=>`${p.name}: ${p.hand.length} card${p.hand.length===1?'':'s'}`).join(' &nbsp;Â·&nbsp; ');
+    sub = G.activePlayers().map(p=>`${p.name}: ${p.hand.length} card${p.hand.length===1?'':'s'}`).join(' &nbsp;·&nbsp; ');
   }
   const waitingForHost = onlineMode && !isHost;
   openOverlay(`<div class="modal-card">
     <div class="modal-title disp">${winner.name} wins the round!</div>
     <div class="modal-sub">${sub}</div>
     ${waitingForHost
-      ? `<div class="modal-sub">Waiting for the host to continueâ€¦</div>`
+      ? `<div class="modal-sub">Waiting for the host to continue…</div>`
       : `<button class="btn btn-primary disp" onclick="proceedAfterRound()">Continue</button>`}
   </div>`);
 }
@@ -2451,9 +2624,16 @@ function showGameOverOverlay(){
   openOverlay(`<div class="modal-card">
     <div class="modal-badge disp">GAME OVER</div>
     <div class="modal-title disp">${champ.name} ${label}</div>
-    <button class="btn btn-primary disp" onclick="backToMenu()">Play Again</button>
-    <button class="btn btn-secondary disp" onclick="openLeaderboard()">ðŸ† View Leaderboard</button>
+    <button class="btn btn-primary disp" onclick="playAgainWithAd()">Play Again</button>
+    <button class="btn btn-secondary disp" onclick="openLeaderboard()">🏆 View Leaderboard</button>
   </div>`);
+}
+
+async function playAgainWithAd(){
+  if(window.SafeCardAdMob){
+    await window.SafeCardAdMob.show();
+  }
+  backToMenu();
 }
 
 // ---------- Global ripple click effect ----------
@@ -2498,9 +2678,11 @@ document.addEventListener('click', (e)=>{
 // ---------- Init ----------
 if(!USE_CLAUDE_STORAGE && firebaseConfigured()) loadFirebaseSdk();
 runLoadingSequence();
+
+if (window.SafeCardAdMob) {
+  window.SafeCardAdMob.initialize();
+}
 </script>
+
 </body>
 </html>
-
-
-
